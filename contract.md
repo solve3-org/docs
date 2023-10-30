@@ -31,7 +31,7 @@ The `Solve3Verify` abstract contract is used to protect your smart contracts wit
 
 #### Implementation Guide <!-- {docsify-ignore} -->
 
-**Note:** Implementation guide can be found [here](contractsImplementation.md).
+**Note:** Implementation guide can be found [here](contractImplementation.md).
 
 * **Functions**:
     
