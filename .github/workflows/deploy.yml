@@ -1,4 +1,4 @@
-name: SSH Deployment
+name: Remote SSH Copy
 
 on:
   push:
@@ -7,24 +7,20 @@ on:
 
 jobs:
   deploy:
+    name: Deploy
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-    - name: Setup SSH Agent
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan -t rsa ${{ secrets.SSH_SERVER }} >> ~/.ssh/known_hosts
-        ssh-add ~/.ssh/id_rsa
-      env:
-        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-
-    - name: Copy Files to Server
-      run: |
-        scp -r -P ${{ secrets.SSH_PORT }} ./* ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_SERVER }}:/home/kurtcibx/docs.solve3.org
-      env:
-        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      - name: Copy Files to Remote Server
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_SERVER }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}  # Use the private key secret, not password
+          port: ${{ secrets.SSH_PORT }}  # If you have a custom SSH port
+          script: |
+            cd /home/kurtcibx/docs.solve3.org  # Replace with your target directory
+            scp -r ./* .
