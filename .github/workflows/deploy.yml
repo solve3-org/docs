@@ -23,5 +23,5 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd /home/kurtcibx/docs.solve3.org
-            rm -rf .
+            rm -rf ./*
             scp -rvf ./* .
