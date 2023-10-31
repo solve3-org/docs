@@ -13,3 +13,10 @@ If you're new to Solve3, start with these two sections:
 ## Dive Deeper
 
 Use the sidebar to explore more about Solve3.
+
+## Links
+
+- Website: https://solve3.org
+- GitHub: https://github.com/solve3-org/
+- Demo: https://demo.solve3.org
+- Twitter: https://twitter.com/solve3_org
