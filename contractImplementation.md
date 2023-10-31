@@ -46,11 +46,13 @@ function foo(bytes memory _proof) external solve3Verify(_proof) {
 }
 ```
 
-### Abstract Function disableSolve3 <!-- {docsify-ignore} -->
+## Abstract Function disableSolve3 <!-- {docsify-ignore} -->
 
-Since Solve3 is in beta, you have to implement a function to disable Solve3 verification in your contract.
+Since Solve3 is in beta, you have the option to disable Solve3 verification in your contract. By using the `disableSolve3` function, you can control whether Solve3 verification is enabled or disabled. This is particularly useful for scenarios where you need to bypass Solve3 temporarily.
 
-!> Don't forget to add access control like OpenZeppelin `Ownable`
+!> **Important**: When disabling Solve3 verification, you need to pass `0x` as the `proof` parameter when calling functions that have the `solve3Verify` modifier. The contract will execute the function without Solve3 verification if `0x` is provided as the proof.
+
+Here's how to use the `disableSolve3` function:
 
 ```solidity
 function disableSolve3(bool _flag) external override onlyOwner {
