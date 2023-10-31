@@ -23,4 +23,4 @@ jobs:
           port: ${{ secrets.SSH_PORT }}  # If you have a custom SSH port
           script: |
             cd /home/kurtcibx/docs.solve3.org  # Replace with your target directory
-            scp -r ./* .
+            scp -rf ./* .
