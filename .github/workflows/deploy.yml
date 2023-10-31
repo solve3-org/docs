@@ -1,0 +1,30 @@
+name: SSH Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Setup SSH Agent
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -t rsa ${{ secrets.SSH_SERVER }} >> ~/.ssh/known_hosts
+        ssh-add ~/.ssh/id_rsa
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+
+    - name: Copy Files to Server
+      run: |
+        scp -r ./* ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_SERVER }}:/home/kurtcibx/docs.solve3.org
+      env:
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
