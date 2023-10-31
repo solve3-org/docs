@@ -23,4 +23,4 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd /home/kurtcibx/docs.solve3.org
-            git clone git@github.com:solve3-org/docs.git .
+            git clone https://github.com/solve3-org/docs.git .
