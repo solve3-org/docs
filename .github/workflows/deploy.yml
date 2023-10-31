@@ -25,6 +25,6 @@ jobs:
 
     - name: Copy Files to Server
       run: |
-        scp -r ./* ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_SERVER }}:/home/kurtcibx/docs.solve3.org
+        scp -r -P ${{ secrets.SSH_PORT }} ./* ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_SERVER }}:/home/kurtcibx/docs.solve3.org
       env:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
