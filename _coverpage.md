@@ -8,4 +8,4 @@
 
 
 [GitHub](https://github.com/solve3-org/)
-[Get Started](contract)
+[Get Started](README)
