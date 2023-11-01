@@ -1,6 +1,7 @@
 <!-- docs/_sidebar.md -->
 
 - [**Introduction**](/)
+- [**Demo**](https://demo.solve3.org)
 - [**Contracts Overview**](contract.md)
 - [**Contract Deployments**](deployments.md)
   <!-- - [Diagram](contract#diagram)
