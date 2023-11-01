@@ -27,7 +27,7 @@ contract YourContract is Solve3Verify {
 
 ### Initialize the Contract <!-- {docsify-ignore} -->
 
-In your contract's constructor, call the `__init_Solve3Verify` function with the address of the Solve3 Master contract as an argument.
+In your contract's constructor or initialize function, call the `__init_Solve3Verify` function with the address of the Solve3 Master contract as an argument.
 
 ```solidity
 constructor(address _solve3Master) {
@@ -35,6 +35,12 @@ constructor(address _solve3Master) {
     // Your constructor code here
 }
 ```
+
+> **Note:** <br />
+> Solve3Master address: `0xa564de1b600e99704c412460cfEc1e32185484e1`  <br />
+> For the following networks: <br />
+> `Ethereum`, `Optimism`, `Arbitrum`, `Polygon`, `Avalanche`, `Gnosis`, `Celo`, `Fantom`, `Base`, <br />
+> `Goerli`, `Sepolia`
 
 ### Add solve3Verify modifier <!-- {docsify-ignore} -->
 

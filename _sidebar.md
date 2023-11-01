@@ -2,6 +2,7 @@
 
 - [**Introduction**](/)
 - [**Contracts Overview**](contract.md)
+- [**Contract Deployments**](deployments.md)
   <!-- - [Diagram](contract#diagram)
   - [Solve3Master](contract#solve3master)
   - [Solve3Verify](contract#solve3verify) -->
