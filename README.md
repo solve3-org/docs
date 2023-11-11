@@ -1,10 +1,10 @@
-## A Smart Contract Bot Protection
+## Bot Protection for Smart Contract
 
 .. by using captchas. Solving captchas has become an intuitive part of the web2 ecosystem, that is very effective in the fight against bots. Currently in the beta phase, Solve3 remodels this native web2 tool into one that can easily and elegantly be utilized in web3 space.
 
 ## Getting Started
 
-If you're new to Solve3, start with these two sections:
+If you're new to Solve3, start with these sections:
 
 - [Contracts Overview](contract.md): Learn more about the contracts in general.
 - [Contract Implementation](contractImplementation.md): Find out how to add Solve3's protection to your smart contracts.
